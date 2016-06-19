@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -23,17 +24,12 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Spinner routineSpinner = (Spinner) findViewById(R.id.routineSpinner);
+        Spinner skillSpinner = (Spinner) findViewById(R.id.skillSpinner);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,6 +39,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -82,21 +79,214 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        Spinner skill = (Spinner) findViewById(R.id.skillSpinner);
+        final Spinner skill = (Spinner) findViewById(R.id.skillSpinner);
+        final Spinner routine = (Spinner) findViewById(R.id.routineSpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.skillGroups_array, android.R.layout.simple_spinner_item);
+
+        Button skillButton = (Button) findViewById(R.id.skillButton);
+
+        Button routineButton = (Button) findViewById(R.id.routineButton);
+
+        routineButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch(routine.getPrompt().toString()){
+                    case "Level 4":
+                        break;
+
+                    case "Level 5":
+                        break;
+
+                    case "Level 6":
+                        break;
+
+                    case "Level 7":
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        });
+
         if (id == R.id.rings) {
             // Handle the camera action
             adapter = ArrayAdapter.createFromResource(this, R.array.rings_skillGroups_array, android.R.layout.simple_dropdown_item_1line);
+            skillButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    switch (skill.getPrompt().toString()){
+                        case "Kip and Swing Elements":
+                            break;
+
+                        case "Swings to Handstand":
+                            break;
+
+                        case "Swings to Strength Hold":
+                            break;
+
+                        case "Strength Elements Hold":
+                            break;
+
+                        case "Dismounts":
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+
+            });
+
+
         } else if (id == R.id.highbar) {
             adapter = ArrayAdapter.createFromResource(this, R.array.hbar_skillGroups_array, android.R.layout.simple_dropdown_item_1line);
+
+            skillButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    switch (skill.getPrompt().toString()){
+                        case "Long hang Without Turns":
+                            break;
+
+                        case "Flight":
+                            break;
+
+                        case "In-Bar":
+                            break;
+
+                        case "El-Grip":
+                            break;
+
+                        case "Dismounts":
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+
+            });
+
         } else if (id == R.id.floor) {
             adapter = ArrayAdapter.createFromResource(this, R.array.floor_skillGroups_array, android.R.layout.simple_dropdown_item_1line);
+
+            skillButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    switch (skill.getPrompt().toString()){
+                        case "Non-Acrobatic":
+                            break;
+
+                        case "Acrobatic Forward":
+                            break;
+
+                        case "Acrobatic Backward":
+                            break;
+
+                        case "Acrobatic Side-ways":
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+
+            });
+
         } else if (id == R.id.parallelbars) {
             adapter = ArrayAdapter.createFromResource(this, R.array.pbar_skillGroups_array, android.R.layout.simple_dropdown_item_1line);
+
+            skillButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    switch (skill.getPrompt().toString()){
+                        case "Support":
+                            break;
+
+                        case "Upper Arm":
+                            break;
+
+                        case "Long Swing":
+                            break;
+
+                        case "Under Swing":
+                            break;
+
+                        case "Dismounts":
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+
+            });
+
         } else if (id == R.id.pommelhorse) {
             adapter = ArrayAdapter.createFromResource(this, R.array.pommel_skillGroups_array, android.R.layout.simple_dropdown_item_1line);
+
+            skillButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    switch (skill.getPrompt().toString()){
+                        case "Scissors":
+                            break;
+
+                        case "Circles and Flairs":
+                            break;
+
+                        case "Travels":
+                            break;
+
+                        case "Kehrswings, flops and combined elements":
+                            break;
+
+                        case "Dismounts":
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+
+            });
+
         } else if (id == R.id.vault) {
             adapter = ArrayAdapter.createFromResource(this, R.array.vault_skillGroups_array, android.R.layout.simple_dropdown_item_1line);
+
+            skillButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view){
+                    switch (skill.getPrompt().toString()){
+                        case "Forward Handspring and Yamashita":
+                            break;
+
+                        case "Handspring with turn":
+                            break;
+
+                        case "Round-off Entry with Backwards 2nd Flight Phase":
+                            break;
+
+                        case "Round-off Entry with turn and Forwards 2nd Flight Phase":
+                            break;
+
+                        case "Round-off Entry with turn and Backwards 2nd Flight Phase":
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+
+            });
+
         }
         skill.setAdapter(adapter);
 
