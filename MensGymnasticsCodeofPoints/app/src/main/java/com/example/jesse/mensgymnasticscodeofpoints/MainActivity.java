@@ -1,5 +1,8 @@
 package com.example.jesse.mensgymnasticscodeofpoints;
 
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -13,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * all of the java code for this app. Handles all of the back-end actions
@@ -394,6 +398,7 @@ public class MainActivity extends AppCompatActivity
                                         break;
 
                                     case "Dismounts":
+
                                         break;
 
                                     default:
