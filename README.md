@@ -1,4 +1,4 @@
 # MensGymnasticsCodeOfPoints
 This is an android application that will point to the current routines and skills in the Men's Gymnastics Code of Points
 
-(This project is closed until there is a way to load local pdfs in android phones)
+(This project was closed, but will continue and is planned to finish before January)
